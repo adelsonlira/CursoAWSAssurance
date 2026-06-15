@@ -27,7 +27,13 @@ public class DynamoController {
 
     @GetMapping("/find/{id}")
     public ResponseEntity<Map<String, String>> find(@PathVariable String id) {
-        return ResponseEntity.ok(service.find(id));
+        Map<String, String> result = service.find(id);
+
+        if (result.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(result);
     }
 
     @PutMapping("/update")
