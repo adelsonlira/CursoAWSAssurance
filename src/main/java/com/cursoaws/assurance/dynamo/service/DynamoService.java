@@ -15,7 +15,7 @@ public class DynamoService {
 
     private final DynamoDbClient dynamoDbClient;
 
-    private static final String TABLE_NAME = "academia-java-aws";
+    private static final String TABLE_NAME = "aws-curso-assurance";
 
     public DynamoService(DynamoDbClient dynamoDbClient) {
         this.dynamoDbClient = dynamoDbClient;
